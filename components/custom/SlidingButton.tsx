@@ -23,8 +23,10 @@ export default function SlidingButton() {
     info: PanInfo,
   ) => {
     if (info.offset.x >= constraints.right) {
-      // Open a website in a new tab https://devvibe.org
-      // After 2 seconds, reset the button position
+      window.open("https://devvibe.org", "_blank");
+      setTimeout(() => {
+        springPosition.set(0); // Resets the button position
+      }, 1000);
     } else {
       console.log(false); // Button has not slid past
       springPosition.set(0); // Spring it back to the starting position
