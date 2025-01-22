@@ -2,10 +2,8 @@
 
 import type { Variants } from "motion/react";
 import { motion, useAnimation } from "motion/react";
+import type { IconProps } from "@/utils/props";
 
-type IconProps = {
-  size?: number;
-};
 const pathVariants: Variants = {
   normal: { d: "M5 12h14" },
   animate: {
