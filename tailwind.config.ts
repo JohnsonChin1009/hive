@@ -51,9 +51,6 @@ export default {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
-  		boxShadow: {
-  			eventCard: '0px 4px 8px 0px rgba(0, 0, 0, 0.2)'
-  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
