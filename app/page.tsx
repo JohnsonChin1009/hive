@@ -1,5 +1,4 @@
 // import EventCard from "@/components/custom/EventCard";
-import Footer from "@/components/custom/Footer";
 
 export default function HomePage() {
   return (
@@ -8,7 +7,6 @@ export default function HomePage() {
         <section>
 
         </section>
-        <Footer />
       </main>
     </>
   );
