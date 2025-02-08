@@ -66,10 +66,10 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
     if (constraintsRef.current) {
       const containerWidth = constraintsRef.current.offsetWidth;
       const buttonWidth = 50;
-      const padding = 20;
+      const padding = 10;
       setConstraints({
         left: 0,
-        right: containerWidth - buttonWidth - padding,
+        right: containerWidth - buttonWidth - padding ,
       });
     }
   }, []);
