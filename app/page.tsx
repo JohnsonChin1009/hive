@@ -30,7 +30,7 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="px-10 py-4 min-h-screen">
+      <main className="px-10 py-10 min-h-screen">
         <section className="flex flex-grow space-x-8">
           {events.length > 0 ? (
             events.map((event) => (
