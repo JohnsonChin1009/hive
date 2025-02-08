@@ -16,7 +16,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <>
       {/* Card Border */}
-      <div className="max-w-[370px] px-4 py-4 flex flex-col gap-4 justify-center items-center border-[2px] border-[#1C1C1C] rounded-[24px] bg-white">
+      <div className="lg:w-[370px] px-4 py-4 flex flex-col gap-4 justify-center items-center border-[2px] border-[#1C1C1C] rounded-[24px] bg-white">
         {/* Event Banner */}
         <div className="relative w-full h-full min-h-[200px]">
           <Image

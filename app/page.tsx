@@ -30,14 +30,12 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="px-10 py-10 min-h-screen">
-        <section className="flex flex-grow space-x-8">
+      <main className="px-10 py-10 min-h-screen flex justify-center">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
           {events.length > 0 ? (
-            events.map((event) => (
-              <EventCard key={event._id} event={event} /> // Pass event data to EventCard
-            ))
+            events.map((event) => <EventCard key={event._id} event={event} />)
           ) : (
-            <p>Loading events...</p> // Display a loading message until events are fetched
+            <p>Loading events...</p>
           )}
         </section>
       </main>
