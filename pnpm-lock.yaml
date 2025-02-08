@@ -26,6 +26,9 @@ importers:
       next:
         specifier: 15.1.4
         version: 15.1.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next-themes:
+        specifier: ^0.4.4
+        version: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       puppeteer:
         specifier: ^24.1.0
         version: 24.1.0(typescript@5.7.3)
@@ -1472,6 +1475,12 @@ packages:
   netmask@2.0.2:
     resolution: {integrity: sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg==}
     engines: {node: '>= 0.4.0'}
+
+  next-themes@0.4.4:
+    resolution: {integrity: sha512-LDQ2qIOJF0VnuVrrMSMLrWGjRMkq+0mpgl6e0juCLqdJ+oo8Q84JRWT6Wh11VDQKkMMe+dVzDKLWs5n87T+PkQ==}
+    peerDependencies:
+      react: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   next@15.1.4:
     resolution: {integrity: sha512-mTaq9dwaSuwwOrcu3ebjDYObekkxRnXpuVL21zotM8qE2W0HBOdVIdg2Li9QjMEZrj73LN96LcWcz62V19FjAg==}
@@ -3658,6 +3667,11 @@ snapshots:
   natural-compare@1.4.0: {}
 
   netmask@2.0.2: {}
+
+  next-themes@0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   next@15.1.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
     dependencies:
