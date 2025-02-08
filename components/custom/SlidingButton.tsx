@@ -52,7 +52,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
   return (
     <div
       ref={constraintsRef}
-      className="w-full max-w-[300px] h-[60px] border border-[#1C1C1C] px-[10px] rounded-[100px] py-[14px] relative overflow-auto flex items-center"
+      className="w-full  h-fit border border-[#1C1C1C] p-1 rounded-[100px] relative flex items-center overflow-hidden"
     >
       {/* Draggable Circle */}
       <motion.div
@@ -63,7 +63,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
         style={{ x: springPosition }} // Bind spring position to draggable element
         className="flex items-center justify-center w-[50px] h-[50px] bg-[#1C1C1C] rounded-full shadow-md cursor-pointer text-white"
       >
-        <FaArrowRight className="text-[20px]" />
+        <FaArrowRight className="text-[20px] text-white" />
       </motion.div>
 
       {/* Text */}
