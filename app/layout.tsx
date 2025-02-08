@@ -13,6 +13,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Hive | The Place to Bee",
   description: "Made with Love by 0x_Johnson",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
