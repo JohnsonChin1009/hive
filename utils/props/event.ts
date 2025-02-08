@@ -1,5 +1,5 @@
 interface EventProps {
-  id: string;
+  _id: string;
   event_title: string;
   event_host: string;
   event_date: Date;

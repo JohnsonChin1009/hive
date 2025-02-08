@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import type { Variants } from 'motion/react';
-import { motion, useAnimation } from 'motion/react';
-import type { IconProps } from "@/utils/props";
+import type { Variants } from "motion/react";
+import { motion, useAnimation } from "motion/react";
+import type { IconProps } from "@/utils/props/icons";
 
 const bodyVariants: Variants = {
   normal: {
@@ -43,25 +43,25 @@ const tailVariants: Variants = {
     rotate: [0, -15, 15, -10, 10, -5, 5],
     transition: {
       duration: 2.5,
-      ease: 'easeInOut',
+      ease: "easeInOut",
       repeat: Infinity,
     },
   },
 };
 
-const GithubIcon = ({size}: IconProps) => {
+const GithubIcon = ({ size }: IconProps) => {
   const bodyControls = useAnimation();
   const tailControls = useAnimation();
 
   const handleMouseEnter = async () => {
-    bodyControls.start('animate');
-    await tailControls.start('draw');
-    tailControls.start('wag');
+    bodyControls.start("animate");
+    await tailControls.start("draw");
+    tailControls.start("wag");
   };
 
   const handleMouseLeave = () => {
-    bodyControls.start('normal');
-    tailControls.start('normal');
+    bodyControls.start("normal");
+    tailControls.start("normal");
   };
 
   return (

@@ -4,7 +4,11 @@ import { FaArrowRight } from "react-icons/fa";
 import { motion, PanInfo, useSpring } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 
-export default function SlidingButton() {
+interface SlidingButtonProps {
+  eventURL: string;
+}
+
+export default function SlidingButton({ eventURL }: SlidingButtonProps) {
   const constraintsRef = useRef<HTMLDivElement | null>(null);
   const [constraints, setConstraints] = useState<{
     left: number;
@@ -23,7 +27,7 @@ export default function SlidingButton() {
     info: PanInfo,
   ) => {
     if (info.offset.x >= constraints.right) {
-      window.open("https://devvibe.org", "_blank");
+      window.open(eventURL, "_blank");
       setTimeout(() => {
         springPosition.set(0); // Resets the button position
       }, 1000);

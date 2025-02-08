@@ -6,8 +6,13 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaMoneyBill } from "react-icons/fa";
 import { FaWalking } from "react-icons/fa";
 import SlidingButton from "@/components/custom/SlidingButton";
+import EventProps from "@/utils/props/event";
 
-export default function EventCard() {
+interface EventCardProps {
+  event: EventProps;
+}
+
+export default function EventCard({ event }: EventCardProps) {
   return (
     <>
       {/* Card Border */}
@@ -15,8 +20,8 @@ export default function EventCard() {
         {/* Event Banner */}
         <div className="relative w-full h-full min-h-[200px]">
           <Image
-            src="/test-banner.avif"
-            alt="Event Banner"
+            src={event.event_banner_url}
+            alt={event.event_banner_alt}
             fill
             objectFit="cover"
             className="rounded-[16px]"
@@ -26,11 +31,9 @@ export default function EventCard() {
         <div className="w-full space-y-2">
           {/* Event Title and Host */}
           <div className="gap-1">
-            <h1 className="text-[16px] font-bold">
-              Kuala Lumpur AWS Meetup ( In person ) January 2025 @ AWS Office
-            </h1>
+            <h1 className="text-[16px] font-bold">{event.event_title}</h1>
             <p className="text-[14px] text-[#BFBFBF] font-semibold">
-              AWS User Group Malaysia
+              {event.event_host}
             </p>
           </div>
 
@@ -38,25 +41,30 @@ export default function EventCard() {
           <div className="flex flex-col space-y-2 text-[14px] font-semibold">
             <p className="event-details">
               <FaCalendarDay className="text-[20px]" />
-              16 Jan 2025 (7.00p.m. - 9.00p.m.)
+              {event.event_date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+              , {event.event_time}
             </p>
             <p className="event-details">
               <FaLocationDot className="text-[20px]" />
-              The Gardens North Tower
+              {event.event_venue}
             </p>
             <div className="flex justify-between">
               <p className="event-details">
                 <FaMoneyBill className="text-[20px]" />
-                Free of Charge
+                {event.event_fee}
               </p>
               <p className="event-details">
                 <FaWalking className="text-[20px]" />
-                Walk-in Available
+                {event.event_availability}
               </p>
             </div>
 
             {/* Slide Button */}
-            <SlidingButton />
+            <SlidingButton eventURL={event.event_url} />
           </div>
         </div>
       </div>

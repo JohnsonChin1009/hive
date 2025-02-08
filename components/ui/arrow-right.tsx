@@ -2,7 +2,7 @@
 
 import type { Variants } from "motion/react";
 import { motion, useAnimation } from "motion/react";
-import type { IconProps } from "@/utils/props";
+import type { IconProps } from "@/utils/props/icons";
 
 const pathVariants: Variants = {
   normal: { d: "M5 12h14" },
