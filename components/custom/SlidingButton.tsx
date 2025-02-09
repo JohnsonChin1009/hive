@@ -21,19 +21,12 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
 
   // Spring value to smoothly animate position
   const springPosition = useSpring(0, { stiffness: 300, damping: 20 });
-  const bgWidth = useTransform(springPosition, (latest) => latest + 50);
-
-  // Add this near other useTransform hooks
-  const textColor = useTransform(
-    springPosition,
-    [30, 100], // position values
-    ["#1C1C1C", "white"] // corresponding colors
-  );
+  const bgWidth = useTransform(springPosition, (latest: number) => latest + 50);
 
   const whiteTextOpacity = useTransform(
     springPosition,
     [30, 100], // position values
-    [0, 1] // opacity values
+    [0, 1], // opacity values
   );
 
   // Handle drag release to check position and animate
@@ -69,7 +62,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
       const padding = 10;
       setConstraints({
         left: 0,
-        right: containerWidth - buttonWidth - padding ,
+        right: containerWidth - buttonWidth - padding,
       });
     }
   }, []);
@@ -81,9 +74,9 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
     >
       {/* Background that follows the button */}
       <motion.div
-        style={{ 
+        style={{
           width: bgWidth,
-          opacity: 1
+          opacity: 1,
         }}
         className="absolute left-0 top-0 h-[50px] bg-[#1C1C1C] rounded-[100px] m-1"
       />
@@ -107,7 +100,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
       </p>
 
       {/* White Text (appears on dark background) */}
-      <motion.p 
+      <motion.p
         style={{ opacity: whiteTextOpacity }}
         className="absolute inset-0 flex items-center justify-center font-semibold pointer-events-none text-white"
       >
