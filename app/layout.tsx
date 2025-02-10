@@ -23,9 +23,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${poppins.className} antialiased bg-[url('/background.png')] bg-cover bg-center`}>
+      <body className={`${poppins.className} antialiased bg-[url('/background.png')] dark:bg-[url('/background-dark.png')] bg-cover bg-center`}>
         <ThemeProvider>
           <Navbar />
           {children}

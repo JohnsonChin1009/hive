@@ -70,7 +70,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
   return (
     <div
       ref={constraintsRef}
-      className="w-full h-fit border border-[#1C1C1C] p-1 rounded-[100px] relative flex items-center overflow-hidden"
+      className="w-full h-fit border-2 border-[#1C1C1C] dark:border-white p-1 rounded-[100px] relative flex items-center overflow-hidden"
     >
       {/* Background that follows the button */}
       <motion.div
@@ -78,7 +78,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
           width: bgWidth,
           opacity: 1,
         }}
-        className="absolute left-0 top-0 h-[50px] bg-[#1C1C1C] rounded-[100px] m-1"
+        className="absolute left-0 top-0 h-[50px] bg-[#1C1C1C] dark:bg-white rounded-[100px] m-1"
       />
 
       {/* Draggable Circle */}
@@ -89,20 +89,20 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
         onDrag={handleDrag}
         onDragEnd={handleDragEnd}
         style={{ x: springPosition }}
-        className="z-10 flex items-center justify-center w-[50px] h-[50px] bg-[#1C1C1C] rounded-full shadow-md cursor-pointer text-white"
+        className="z-10 flex items-center justify-center w-[50px] h-[50px] bg-[#1C1C1C] dark:bg-white rounded-full shadow-md cursor-pointer text-white dark:text-black"
       >
-        <FaArrowRight className="text-[20px] text-white" />
+        <FaArrowRight className="text-[20px] text-white dark:text-black" />
       </motion.div>
 
       {/* Black Text (static) */}
-      <p className="absolute inset-0 flex items-center justify-center font-semibold pointer-events-none text-[#1C1C1C]">
+      <p className="absolute inset-0 flex items-center justify-center font-semibold pointer-events-none text-[#1C1C1C] dark:text-white">
         SLIDE TO EVENT
       </p>
 
       {/* White Text (appears on dark background) */}
       <motion.p
         style={{ opacity: whiteTextOpacity }}
-        className="absolute inset-0 flex items-center justify-center font-semibold pointer-events-none text-white"
+        className="absolute inset-0 flex items-center justify-center font-semibold pointer-events-none text-white dark:text-[#1C1C1C]"
       >
         SLIDE TO EVENT
       </motion.p>
