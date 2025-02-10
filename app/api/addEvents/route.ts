@@ -19,9 +19,9 @@ export async function POST(request: NextRequest) {
         } else {
             return NextResponse.json({ error: "Failed to add event" }, { status: 500 });
         }
-    } catch (error) {
+    } catch (error: unknown) {
         console.error("Error adding event to mongoDB:", error);
-        return { error: "Failed to add event" };
+        return NextResponse.json({ error: error as string }, { status: 500 });
     } finally {
         await client.close();
     }
