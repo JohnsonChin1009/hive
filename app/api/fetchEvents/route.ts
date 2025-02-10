@@ -7,8 +7,8 @@ const client = new MongoClient(uri);
 export async function GET() {
   try {
     await client.connect();
-    const database = client.db("hive-website");
-    const collection = database.collection("event-details");
+    const database = client.db(process.env.DATABASE_NAME as string);
+    const collection = database.collection(process.env.COLLECTION_NAME as string);
 
     const events = await collection.find({}).toArray();
     return NextResponse.json(events, { status: 200 });
