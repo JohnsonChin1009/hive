@@ -1,4 +1,4 @@
-![Hive Logo](/public/hive-logo.png)
+![Hive Logo](/public/hive-logo-white.png)
 ---
 
 
