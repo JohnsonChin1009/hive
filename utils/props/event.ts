@@ -3,7 +3,7 @@ interface EventProps {
   availability: string;
   banner_alt: string;
   banner_url: string;
-  date: string;
+  date: Date;
   fee: string;
   host: string;
   time: string;

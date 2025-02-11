@@ -13,6 +13,14 @@ interface EventCardProps {
 }
 
 export default function EventCard({ event }: EventCardProps) {
+  const formatDate = (date: Date): string => {
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
   return (
     <>
       {/* Card Border */}
@@ -41,11 +49,7 @@ export default function EventCard({ event }: EventCardProps) {
           <div className="flex flex-col space-y-2 text-[14px] font-medium text-black ">
             <p className="event-details dark:text-[#ffffff]">
               <FaCalendarDay className="text-[20px]" />
-              {event.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
+              {formatDate(event.date)}
               , {event.time}
             </p>
             <p className="event-details dark:text-[#ffffff]">
