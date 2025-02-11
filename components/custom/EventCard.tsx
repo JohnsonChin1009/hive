@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaCalendarDay, FaMoneyBill, FaWalking, FaCheckCircle } from "react-icons/fa";
+import { FaCalendarDay, FaMoneyBill, FaCheckCircle } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import SlidingButton from "@/components/custom/SlidingButton";
 import { EventProps } from "@/utils/props/event";
@@ -22,7 +22,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <>
       {/* Card Border */}
-      <div className="lg:w-[20vw] md:h-auto 2xl:w-[20vw] xl:h-[480px] px-4 py-4 flex flex-col gap-4 items-center border-[2px] border-[#1C1C1C] dark:border-[#adadad] rounded-[24px] bg-white dark:bg-[#1C1C1C]/10 dark:backdrop-blur-md justify-between">
+      <div className="lg:w-[20vw] md:h-auto 2xl:w-[20vw] xl:h-[480px] px-4 py-4 flex flex-col gap-4 items-center border-[2px] border-[#1C1C1C] dark:border-[#adadad] rounded-[24px] bg-white dark:bg-[#1C1C1C]/10 dark:backdrop-blur-md justify-between py-10">
         {/* Event Banner */}
         <div className="relative w-full lg:h-[210px] 2xl:h-[250px] ">
           <Image
