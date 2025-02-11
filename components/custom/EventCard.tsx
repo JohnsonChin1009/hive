@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FaCalendarDay, FaMoneyBill, FaWalking } from "react-icons/fa";
+import { FaCalendarDay, FaMoneyBill, FaWalking, FaCheckCircle } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import SlidingButton from "@/components/custom/SlidingButton";
 import EventProps from "@/utils/props/event";
@@ -43,7 +43,7 @@ export default function EventCard({ event }: EventCardProps) {
           </div>
 
           {/* Event Details */}
-          <div className="flex flex-col space-y-2 text-sm font-medium text-black ">
+          <div className="flex flex-col space-y-2 text-xs font-medium text-black ">
             <div className="flex items-center gap-2 dark:text-[#ffffff]">
               <div className="w-5 h-5">
                 <FaCalendarDay className="text-lg" />
@@ -58,15 +58,15 @@ export default function EventCard({ event }: EventCardProps) {
               {event.venue}
             </div>
             <div className="flex gap-2">
-              <p className="text-xs flex items-center gap-2 border px-2 py-1 rounded-md dark:text-white dark:border-[#686868]">
-                <FaMoneyBill className="text-lg text-[#90ec8c]" />
+              <p className="text-[10px] flex items-center gap-2 border px-2 py-1 rounded-md dark:text-white dark:border-[#686868]">
+                <FaMoneyBill className="text-base text-[#90ec8c]" />
                 {/* {event.event_fee} */}
                 {event.fee}
               </p>
-              <p className="text-xs flex items-center gap-2 border px-2 py-1 rounded-md dark:text-white dark:border-[#686868]">
-                <FaWalking className="text-lg text-[#b1cfff]" />
+              <p className="text-[10px] flex items-center gap-2 border px-2 py-1 rounded-md dark:text-white dark:border-[#686868]">
+                <FaCheckCircle className="text-base text-[#b1cfff]" />
                 {/* {event.event_availability} */}
-                Walk-in
+                Available
               </p>
             </div>
           </div>
