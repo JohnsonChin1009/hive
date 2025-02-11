@@ -2,7 +2,7 @@
 
 import EventCard from "@/components/custom/EventCard";
 import { useState, useEffect } from "react";
-import EventProps from "@/utils/props/event";
+import { EventProps } from "@/utils/props/event";
 
 export default function HomePage() {
   const [events, setEvents] = useState<EventProps[]>([]);

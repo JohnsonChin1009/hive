@@ -1,4 +1,4 @@
-interface EventProps {
+export interface EventProps {
   _id: string;
   availability: string;
   banner_alt: string;
@@ -12,4 +12,15 @@ interface EventProps {
   venue: string;
 }
 
-export default EventProps;
+export interface RawEventProps {
+  title: string;
+  host: string;
+  date: string;
+  time: string;
+  venue: string;
+  fee: string;
+  availability: string;
+  url: string;
+  banner_url: string;
+  banner_alt: string;
+}

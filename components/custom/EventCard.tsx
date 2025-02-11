@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaCalendarDay, FaMoneyBill, FaWalking, FaCheckCircle } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import SlidingButton from "@/components/custom/SlidingButton";
-import EventProps from "@/utils/props/event";
+import { EventProps } from "@/utils/props/event";
 
 interface EventCardProps {
   event: EventProps;
@@ -12,10 +12,10 @@ interface EventCardProps {
 
 export default function EventCard({ event }: EventCardProps) {
   const formatDate = (date: Date): string => {
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
