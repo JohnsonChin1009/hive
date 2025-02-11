@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/custom/Navbar";
 import Footer from "@/components/custom/Footer";
 import { Poppins } from "next/font/google";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -23,10 +23,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
-    <html lang="en">
-      <body className={`${poppins.className} antialiased bg-[url('/background.png')] bg-cover bg-center`}>
-        <ThemeProvider attribute="class">
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins.className} antialiased bg-[url('/background.png')] dark:bg-[url('/background-dark.png')] bg-cover bg-center`}>
+        <ThemeProvider>
           <Navbar />
           {children}
           <Footer />

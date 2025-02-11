@@ -9,7 +9,7 @@ body {
 .event-details {
     display: flex;
     gap: 16px;
-    color: #999898;
+    color: #1c1c1c;
     justify-items: start;
 }
 

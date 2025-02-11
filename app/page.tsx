@@ -15,7 +15,7 @@ export default function HomePage() {
     // Ensure event_date is converted to a Date object
     return data.map((event: EventProps) => ({
       ...event,
-      event_date: new Date(event.event_date),
+      date: new Date(event.date),
     }));
   }
 
@@ -30,8 +30,8 @@ export default function HomePage() {
 
   return (
     <>
-      <main className="px-10 py-10 min-h-screen flex justify-center">
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
+      <main className=" min-h-screen flex justify-center">
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto justify-items-center ">
           {events.length > 0 ? (
             events.map((event) => <EventCard key={event._id} event={event} />)
           ) : (

@@ -21,7 +21,7 @@ export default function ThemeToggleButton() {
         className="p-2 rounded-md transition"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        {theme === "dark" ? <SunIcon size={24} /> : <MoonIcon size={24} />}
+        {theme === "dark" ? <SunIcon size={24} className="text-white" /> : <MoonIcon size={24} className="" />}
       </button>
     </>
   );

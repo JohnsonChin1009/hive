@@ -18,6 +18,14 @@ export default function Footer() {
           >
             johnson
           </a>
+          {" "} and {" "}
+          <a
+            href="https://junshen.vercel.app"
+            target="_blank"
+            className="underline"
+          >
+            junshen
+          </a>
         </div>
         <a
           href="https://github.com/JohnsonChin1009/hive"
