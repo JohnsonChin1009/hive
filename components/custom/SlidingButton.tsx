@@ -9,6 +9,8 @@ interface SlidingButtonProps {
 }
 
 export default function SlidingButton({ eventURL }: SlidingButtonProps) {
+
+  const btnWidth = 40;
   const constraintsRef = useRef<HTMLDivElement | null>(null);
   const [constraints, setConstraints] = useState<{
     left: number;
@@ -21,7 +23,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
 
   // Spring value to smoothly animate position
   const springPosition = useSpring(0, { stiffness: 300, damping: 20 });
-  const bgWidth = useTransform(springPosition, (latest: number) => latest + 40);
+  const bgWidth = useTransform(springPosition, (latest: number) => latest + btnWidth);
 
   const whiteTextOpacity = useTransform(
     springPosition,
@@ -55,11 +57,10 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
   useEffect(() => {
     if (constraintsRef.current) {
       const containerWidth = constraintsRef.current.offsetWidth;
-      const buttonWidth = 40;
       const padding = 10;
       setConstraints({
         left: 0,
-        right: containerWidth - buttonWidth - padding,
+        right: containerWidth - btnWidth - padding,
       });
     }
   }, []);
@@ -86,7 +87,7 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
         onDrag={handleDrag}
         onDragEnd={handleDragEnd}
         style={{ x: springPosition }}
-        className="z-10 flex items-center justify-center w-[40px] h-[40px] bg-[#1C1C1C] dark:bg-white rounded-full shadow-md cursor-pointer text-white dark:text-black"
+        className={`z-10 flex items-center justify-center w-[${btnWidth}px] h-[${btnWidth}px] bg-[#1C1C1C] dark:bg-white rounded-full shadow-md cursor-pointer text-white dark:text-black`}
       >
         <FaArrowRight className="text-lg text-white dark:text-black" />
       </motion.div>
