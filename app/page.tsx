@@ -15,7 +15,7 @@ export default function HomePage() {
     // Ensure event_date is converted to a Date object
     return data.map((event: EventProps) => ({
       ...event,
-      event_date: new Date(event.event_date),
+      date: new Date(event.date),
     }));
   }
 

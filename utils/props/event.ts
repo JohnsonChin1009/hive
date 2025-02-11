@@ -1,15 +1,15 @@
 interface EventProps {
   _id: string;
-  event_title: string;
-  event_host: string;
-  event_date: Date;
-  event_time: string;
-  event_venue: string;
-  event_fee: string;
-  event_availability: string;
-  event_url: string;
-  event_banner_url: string;
-  event_banner_alt: string;
+  availability: string;
+  banner_alt: string;
+  banner_url: string;
+  date: string;
+  fee: string;
+  host: string;
+  time: string;
+  title: string;
+  url: string;
+  venue: string;
 }
 
 export default EventProps;

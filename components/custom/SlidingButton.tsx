@@ -35,15 +35,12 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
     info: PanInfo,
   ) => {
     if (info.offset.x >= constraints.right) {
-      // setIsSlid(true);
+      // Open in new tab
       window.open(eventURL, "_blank");
-      setTimeout(() => {
-        springPosition.set(0); // Resets the button position
-        // setIsSlid(false);
-      }, 1000);
+      // Immediately reset the button position
+      springPosition.set(0);
     } else {
-      console.log(false); // Button has not slid past
-      springPosition.set(0); // Spring it back to the starting position
+      springPosition.set(0);
     }
   };
 
