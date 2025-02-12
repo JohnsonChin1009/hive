@@ -24,5 +24,5 @@ export interface RawEventProps {
   url: string;
   banner_url: string;
   banner_alt: string;
-  category: string;
+  // category: string;
 }
