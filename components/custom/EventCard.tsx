@@ -22,7 +22,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <>
       {/* Card Border */}
-      <div className="w-full sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[22vw] 2xl:w-[20vw] 
+      <div className="w-full sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[22vw] 2xl:w-[20vw] max-w-[340px]
                     md:min-h-[450px] 
                     px-3 sm:px-4 py-3 sm:py-4 
                     flex flex-col gap-3 sm:gap-4 
@@ -30,6 +30,7 @@ export default function EventCard({ event }: EventCardProps) {
                     dark:border-[#adadad] rounded-[24px] 
                     bg-white dark:bg-[#1C1C1C]/10 
                     dark:backdrop-blur-md justify-between">
+
         {/* Event Banner */}
         <div className="relative w-full h-[180px] sm:h-[200px] lg:h-[210px] 2xl:h-[250px]">
           <Image
