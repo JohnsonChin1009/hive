@@ -11,6 +11,12 @@ Basically users are able to contribute events into the hive website by interacti
 
 If the bot detects a valid link (either meetup.com/lu.ma), it will send the URL to a deployed Web Scraper and once the data is extracted from the event page, it will be parsed into the website and injected into MongoDB.
 
+## Platforms Supported 📱
+- meetup.com
+- lu.ma (coming soon)
+- eventbrite (coming soon)
+- mongodb (coming soon)
+
 ## Contributors 🫂
 
 <div style="display: flex; flex-wrap: wrap;">
@@ -23,4 +29,3 @@ If the bot detects a valid link (either meetup.com/lu.ma), it will send the URL 
     </a>
   </div>
 </div>
-
