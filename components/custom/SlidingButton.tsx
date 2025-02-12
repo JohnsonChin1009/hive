@@ -86,8 +86,8 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
         dragElastic={0.2}
         onDrag={handleDrag}
         onDragEnd={handleDragEnd}
-        style={{ x: springPosition }}
-        className={`z-10 flex items-center justify-center w-[${btnWidth}px] h-[${btnWidth}px] bg-[#1C1C1C] dark:bg-white rounded-full shadow-md cursor-pointer text-white dark:text-black`}
+        style={{ x: springPosition, width: '40px', height: '40px' }}
+        className={`z-10 flex items-center justify-center bg-[#1C1C1C] dark:bg-white rounded-full shadow-md cursor-pointer text-white dark:text-black`}
       >
         <FaArrowRight className="text-lg text-white dark:text-black" />
       </motion.div>
