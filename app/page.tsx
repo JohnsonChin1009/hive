@@ -42,19 +42,21 @@ export default function HomePage() {
 
   const handleSearch = (query: string) => {
     const filtered = events.filter((event) => {
-      const searchString = `${event.title} ${event.host} ${event.venue}`.toLowerCase();
+      const searchString =
+        `${event.title} ${event.host} ${event.venue}`.toLowerCase();
       return searchString.includes(query.toLowerCase());
     });
     setFilteredEvents(filtered);
   };
 
   const handleCategoryChange = (category: string) => {
+    console.log("Selected Category", selectedCategory); // Placeholder to prevent deployment error
     setSelectedCategory(category);
     if (category === "All Events") {
       setFilteredEvents(events);
     } else {
-      const filtered = events.filter((event) => 
-        event.category === category // You'll need to add category to your EventProps
+      const filtered = events.filter(
+        (event) => event.category === category, // You'll need to add category to your EventProps
       );
       setFilteredEvents(filtered);
     }
@@ -63,11 +65,11 @@ export default function HomePage() {
   return (
     <>
       <main className="min-h-screen flex flex-col items-center py-6">
-        <SearchBar 
+        <SearchBar
           onSearch={handleSearch}
           onCategoryChange={handleCategoryChange}
         />
-        
+
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 md:px-0 mx-auto my-4 justify-items-center h-fit max-w-[1400px]">
           {loading ? (
             // Show 8 skeleton cards while loading
@@ -75,7 +77,9 @@ export default function HomePage() {
               <SkeletonCard key={`skeleton-${index}`} />
             ))
           ) : filteredEvents.length > 0 ? (
-            filteredEvents.map((event) => <EventCard key={event._id} event={event} />)
+            filteredEvents.map((event) => (
+              <EventCard key={event._id} event={event} />
+            ))
           ) : (
             <p className="col-span-full text-center text-gray-500 dark:text-gray-400">
               No events found
