@@ -10,6 +10,7 @@ export interface EventProps {
   title: string;
   url: string;
   venue: string;
+  category: string;
 }
 
 export interface RawEventProps {
@@ -23,4 +24,5 @@ export interface RawEventProps {
   url: string;
   banner_url: string;
   banner_alt: string;
+  category: string;
 }
