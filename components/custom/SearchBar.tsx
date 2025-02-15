@@ -30,7 +30,7 @@ export default function SearchBar({ onSearch, onCategoryChange, selectedCategory
   return (
     <div className="w-full max-w-[1400px] px-4 md:px-0 mb-6 space-y-4 ">
       {/* Search Input */}
-      <div className="relative mx-5">
+      <div className="relative mx-8 xl:mx-4">
         <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
         <input
           type="text"
@@ -38,15 +38,15 @@ export default function SearchBar({ onSearch, onCategoryChange, selectedCategory
           value={searchQuery}
           onChange={handleSearch}
           className="w-full pl-10 pr-4 py-2 rounded-full 
-                   border-2 border-[#1C1C1C]/10 dark:border-[#adadad]/10
+                   border-2 border-[#1C1C1C]/10 dark:border-[#adadad]/30
                    bg-white dark:bg-[#1C1C1C]/10 
-                   focus:outline-none focus:border-[#1C1C1C]/30 dark:focus:border-[#adadad]/30
+                   focus:outline-none focus:border-[#1C1C1C]/30 dark:focus:border-[#adadad]/60
                    dark:text-white"
         />
       </div>
 
       {/* Categories */}
-      <div className="flex flex-wrap gap-2 mx-5">
+      <div className="flex flex-wrap gap-2 mx-8 xl:mx-4">
         {categories.map((category) => (
           <button
             key={category}
