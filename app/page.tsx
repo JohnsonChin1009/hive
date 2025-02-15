@@ -10,7 +10,7 @@ export default function HomePage() {
   const [events, setEvents] = useState<EventProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [filteredEvents, setFilteredEvents] = useState<EventProps[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("All Events");
+  // const [selectedCategory, setSelectedCategory] = useState("All Events");
 
   // Function to fetch events from the API
   async function fetchEvents() {
@@ -49,28 +49,28 @@ export default function HomePage() {
     setFilteredEvents(filtered);
   };
 
-  const handleCategoryChange = (category: string) => {
-    console.log("Selected Category", selectedCategory); // Placeholder to prevent deployment error
-    setSelectedCategory(category);
-    if (category === "All Events") {
-      setFilteredEvents(events);
-    } else {
-      const filtered = events.filter(
-        (event) => event.category === category, // You'll need to add category to your EventProps
-      );
-      setFilteredEvents(filtered);
-    }
-  };
+  // const handleCategoryChange = (category: string) => {
+  //   console.log("Selected Category", selectedCategory); // Placeholder to prevent deployment error
+  //   setSelectedCategory(category);
+  //   if (category === "All Events") {
+  //     setFilteredEvents(events);
+  //   } else {
+  //     const filtered = events.filter(
+  //       (event) => event.category === category, // You'll need to add category to your EventProps
+  //     );
+  //     setFilteredEvents(filtered);
+  //   }
+  // };
 
   return (
     <>
       <main className="min-h-screen flex flex-col items-center py-6">
         <SearchBar
           onSearch={handleSearch}
-          onCategoryChange={handleCategoryChange}
+          // onCategoryChange={handleCategoryChange}
         />
-
-        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 md:px-0 mx-auto my-4 justify-items-center h-fit max-w-[1400px]">
+        
+        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 md:px-0 mx-auto my-4 justify-items-center h-fit max-w-[1480px]">
           {loading ? (
             // Show 8 skeleton cards while loading
             [...Array(8)].map((_, index) => (
