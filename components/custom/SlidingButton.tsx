@@ -32,19 +32,16 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
   );
 
   // Handle drag release to check position and animate
-  const handleDragEnd = (
-  ) => {
-    const finalPosition = springPosition.get(); // Get actual position
+  const handleDragEnd = () => {
+    const finalPosition = springPosition.get();
   
-    console.log("Final Position:", finalPosition, "Right Constraint:", constraints.right);
-  
-    if (finalPosition >= constraints.right - 5) { // Allow slight margin
+    if (finalPosition >= constraints.right - 5) {
+      window.open(eventURL, "_blank");
       setTimeout(() => {
-        window.open(eventURL, "_blank");
-        springPosition.set(0); // Reset after opening link
-      }, 200);
+        springPosition.set(0);
+      }, 100);
     } else {
-      springPosition.set(0); // Immediately reset if not fully slid
+      springPosition.set(0);
     }
   };
 
