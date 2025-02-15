@@ -27,7 +27,7 @@ export default function EventCard({ event }: EventCardProps) {
                     px-3 sm:px-4 py-3 sm:py-4 
                     flex flex-col gap-3 sm:gap-4 
                     items-center border-[2px] border-[#1C1C1C] 
-                    dark:border-[#adadad] rounded-[24px] 
+                    dark:border-[#adadad] rounded-xl md:rounded-3xl
                     bg-white dark:bg-[#1C1C1C]/10 
                     dark:backdrop-blur-md justify-between">
 
@@ -37,7 +37,7 @@ export default function EventCard({ event }: EventCardProps) {
             src={event.banner_url ? event.banner_url : "/no-img.jpg"}
             alt={event.banner_alt ? event.banner_alt : "No Image"}
             fill
-            className="rounded-[16px] object-cover"
+            className="rounded-lg md:rounded-2xl object-cover"
           />
         </div>
 
@@ -86,8 +86,13 @@ export default function EventCard({ event }: EventCardProps) {
         </div>
 
         {/* Slide Button */}
-        <div className="w-full">
+        <div className="w-full hidden lg:block">
           <SlidingButton eventURL={event.url} />
+        </div>
+        <div className="w-full block lg:hidden">
+          <button className="w-full border-2 border-[#1C1C1C] dark:border-[#adadad] rounded-lg text-black text-base font-medium dark:text-white p-2" onClick={() => window.open(event.url, "_blank")}>
+            View Event
+          </button>
         </div>
       </div>
     </>

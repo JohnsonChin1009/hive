@@ -1,6 +1,6 @@
 export default function SkeletonCard() {
   return (
-    <div className="w-full sm:w-[70vw] md:w-[45vw] lg:w-[30vw] xl:w-[22vw] 2xl:w-[20vw] max-w-[340px]
+    <div className="w-full sm:w-[90vw] md:w-[45vw] lg:w-[30vw] xl:w-[22vw] 2xl:w-[20vw] max-w-[340px]
                     md:min-h-[450px] 
                     px-3 sm:px-4 py-3 sm:py-4 
                     flex flex-col gap-3 sm:gap-4 
