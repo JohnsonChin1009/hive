@@ -5,21 +5,21 @@ import { FaSearch } from "react-icons/fa";
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
-  onCategoryChange: (category: string) => void;
-  selectedCategory: string;
+  // onCategoryChange: (category: string) => void;
+  // selectedCategory: string;
 }
 
-export default function SearchBar({ onSearch, onCategoryChange, selectedCategory }: SearchBarProps) {
+export default function SearchBar({ onSearch }: SearchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
   
-  const categories = [
-    "All Events",
-    "Workshop",
-    "Conference",
-    "Meetup",
-    "Hackathon",
-    "Other"
-  ];
+  // const categories = [
+  //   "All Events",
+  //   "Workshop",
+  //   "Conference",
+  //   "Meetup",
+  //   "Hackathon",
+  //   "Other"
+  // ];
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
@@ -46,7 +46,7 @@ export default function SearchBar({ onSearch, onCategoryChange, selectedCategory
       </div>
 
       {/* Categories */}
-      <div className="flex flex-wrap gap-2 mx-8 xl:mx-4">
+      {/* <div className="flex flex-wrap gap-2 mx-8 xl:mx-4">
         {categories.map((category) => (
           <button
             key={category}
@@ -62,7 +62,7 @@ export default function SearchBar({ onSearch, onCategoryChange, selectedCategory
             {category}
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 } 
