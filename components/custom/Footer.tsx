@@ -18,8 +18,9 @@ export default function Footer() {
             />
           </div>
         </div>
-        <div className="text-[10px] md:text-[16px]">
+        <div className=" text-[16px]">
           made with 🤍 by{" "}
+          <hr className="md:hidden" />
           <a
             href="https://github.com/JohnsonChin1009"
             target="_blank"
