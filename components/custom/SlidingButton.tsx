@@ -33,35 +33,42 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
 
   // Handle drag release to check position and animate
   const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
   ) => {
-    if (info.offset.x >= constraints.right) {
-      // Open in new tab
-      window.open(eventURL, "_blank");
-      // Immediately reset the button position
-      springPosition.set(0);
+    const finalPosition = springPosition.get(); // Get actual position
+  
+    console.log("Final Position:", finalPosition, "Right Constraint:", constraints.right);
+  
+    if (finalPosition >= constraints.right - 5) { // Allow slight margin
+      setTimeout(() => {
+        window.open(eventURL, "_blank");
+        springPosition.set(0); // Reset after opening link
+      }, 200);
     } else {
-      springPosition.set(0);
+      springPosition.set(0); // Immediately reset if not fully slid
     }
   };
 
   // Add onDrag handler to update position in real-time
   const handleDrag = (
     event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo,
+    info: PanInfo
   ) => {
-    springPosition.set(Math.max(0, info.offset.x));
+    const newX = Math.min(constraints.right, Math.max(0, info.offset.x));
+    springPosition.set(newX);
   };
 
   useEffect(() => {
     if (constraintsRef.current) {
       const containerWidth = constraintsRef.current.offsetWidth;
-      const padding = 10;
-      setConstraints({
-        left: 0,
-        right: containerWidth - btnWidth - padding,
-      });
+      const padding = 20;
+      const maxDrag = containerWidth - btnWidth - padding;
+
+      if (maxDrag > 0) {
+        setConstraints({
+          left: 0,
+          right: Math.max(0, maxDrag),
+        });
+      }
     }
   }, []);
 
@@ -82,8 +89,8 @@ export default function SlidingButton({ eventURL }: SlidingButtonProps) {
       {/* Draggable Circle */}
       <motion.div
         drag="x"
-        dragConstraints={{ left: constraints.left, right: constraints.right }}
-        dragElastic={0.2}
+        dragConstraints={constraintsRef}
+        dragElastic={0}
         onDrag={handleDrag}
         onDragEnd={handleDragEnd}
         style={{ x: springPosition, width: '40px', height: '40px' }}
