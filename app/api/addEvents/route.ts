@@ -19,7 +19,6 @@ export async function POST(request: NextRequest) {
     url: eventDetails.url,
     banner_url: eventDetails.banner_url,
     banner_alt: eventDetails.banner_alt,
-    category: eventDetails.category,
   };
 
   try {
