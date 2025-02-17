@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { FaCalendarDay, FaMoneyBill, FaCheckCircle } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import SlidingButton from "@/components/custom/SlidingButton";
 import { EventProps } from "@/utils/props/event";
+import EventButton from "@/components/custom/EventButton";
 
 interface EventCardProps {
   event: EventProps;
@@ -86,8 +86,8 @@ export default function EventCard({ event }: EventCardProps) {
         </div>
 
         {/* Slide Button */}
-        <div className="w-full hidden lg:block">
-          <SlidingButton eventURL={event.url} />
+        <div className="w-full">
+          <EventButton eventURL={event.url} />
         </div>
         <div className="w-full block lg:hidden">
           <button className="w-full border-2 border-[#1C1C1C] dark:border-[#adadad] rounded-lg text-black text-base font-medium dark:text-white p-2" onClick={() => window.open(event.url, "_blank")}>
