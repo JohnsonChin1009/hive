@@ -13,7 +13,7 @@ If the bot detects a valid link (either meetup.com/lu.ma), it will send the URL 
 
 ## Platforms Supported 📱
 - meetup.com
-- lu.ma (coming soon)
+- lu.ma
 - eventbrite (coming soon)
 - mongodb (coming soon)
 
