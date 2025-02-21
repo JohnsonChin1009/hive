@@ -10,7 +10,13 @@ export async function GET() {
     const database = client.db(process.env.DATABASE_NAME as string);
     const collection = database.collection(process.env.COLLECTION_NAME as string);
 
-    const events = await collection.find({}).toArray();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const events = await collection
+    .find({date: { $gte: today}})
+    .sort({ date: 1 })
+    .toArray();
     return NextResponse.json(events, { status: 200 });
   } catch (error) {
     console.error("Error fetching events from mongoDB:", error);
