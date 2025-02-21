@@ -16,7 +16,7 @@ export interface EventProps {
 export interface RawEventProps {
   title: string;
   host: string;
-  date: string;
+  date: Date;
   time: string;
   venue: string;
   fee: string;
