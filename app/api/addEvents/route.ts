@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
   const formattedEventDetails: RawEventProps = {
     title: eventDetails.title,
     host: eventDetails.host,
-    date: eventDetails.date,
+    date: convertStringToDate(eventDetails.date),
     time: removeTimezone(eventDetails.time),
     venue: eventDetails.venue,
     fee: formatFee(eventDetails.fee),
@@ -64,3 +64,7 @@ const formatFee = (fee: string): string => {
 const capitalizeFirstLetter = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 };
+
+const convertStringToDate = (str: string): Date => {
+  return new Date(str);
+}
